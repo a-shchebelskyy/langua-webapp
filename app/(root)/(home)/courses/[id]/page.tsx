@@ -58,7 +58,7 @@ const CoursesPage = () => {
                             <p className="text-sm font-semibold text-slate-950 dark:text-slate-50">за годину</p>
                         </div>
                         <button className="flex mx-auto px-6 py-4 rounded-xl bg-blue-500 hover:bg-blue-700">
-                            <p className="text-base font-semibold text-slate-50">Зв'яжіться</p>
+                            <p className="text-base font-semibold text-slate-50">Зв&apos;яжіться</p>
                         </button>
                     </div>
                 </div>
