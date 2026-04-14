@@ -1,10 +1,11 @@
 'use client'
-import { useUser } from '@clerk/nextjs'
+import { useUser, useAuth } from '@clerk/nextjs'
 import Image from 'next/image';
 
 // import { days, months } from '@/constants';
-
+//hello
 const Home = () => {
+  const { isSignedIn } = useAuth();
   const { user } = useUser();
 
   // const now = new Date();
@@ -17,13 +18,14 @@ const Home = () => {
   // const monthName: string = months[new Date().getMonth()];
   // const yearNumber = new Date().getFullYear();
 
+  if (!isSignedIn) return null;
 
   return (
     <section className="flex w-full flex-row p-6 text-white bg-neutral-900">
       <div className="flex flex-1 flex-col min-h-screen">
         <div className='flex flex-row'>
           <div className='absolute flex flex-col ml-[112px] mt-[32px] max-w-[256px] gap-2'>
-            <h1 className="text-4xl font-semibold">Вітаємо,<span className="text-amber-300"> {user.firstName}</span>!</h1>
+            <h1 className="text-4xl font-semibold">Вітаємо,<span className="text-amber-300"> {user?.firstName}</span>!</h1>
             <p className='text-neutral-300 text-xs'>Натисніть на &quot;Курси&quot;, щоб розпочати свою навчальну подорож!</p>
           </div>
           <Image
