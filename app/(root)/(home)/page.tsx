@@ -3,7 +3,7 @@ import { useUser, useAuth } from '@clerk/nextjs'
 import Image from 'next/image';
 
 // import { days, months } from '@/constants';
-//hello
+// hello
 const Home = () => {
   const { isSignedIn } = useAuth();
   const { user } = useUser();
