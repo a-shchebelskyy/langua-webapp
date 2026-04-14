@@ -12,9 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Langua",
-  description: "Online Language Learning",
+  description: "Online Language Learning for Ukrainians",
   icons: {
-    icon: "/icons/langua-circle.png",
+    icon: "/images/icon.png",
   },
 };
 
@@ -28,7 +28,7 @@ export default function RootLayout({
         appearance={{
           layout: {
             socialButtonsVariant: "iconButton",
-            logoImageUrl: "/icons/langua-circle.png",
+            logoImageUrl: "",
           },
           variables: {
             colorText: "#000000",
@@ -39,7 +39,7 @@ export default function RootLayout({
           },
         }}
       >
-        <body className={`${inter.className} bg-slate-200 dark:bg-slate-950`}>
+        <body className={`${inter.className} bg-slate-200`}>
           <Toaster />
           {children}
         </body>

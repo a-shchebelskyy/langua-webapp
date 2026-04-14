@@ -11,11 +11,13 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: Readonly<{children: ReactNode}>) => {
   return (
-    <main className="flex flex-row w-full">
-      <Sidebar />
-      <section className="flex min-h-screen flex-1 flex-col">
+    <main className="flex flex-col min-h-screen">
+      <div className='fixed w-full z-10'>
         <Navbar />
-        <div className="w-full">{children}</div>
+      </div>
+      <section className="flex flex-1 flex-row">
+        <Sidebar />
+        <div className="w-full ml-[192px] mt-[80px]">{children}</div>
       </section>
     </main>
   );

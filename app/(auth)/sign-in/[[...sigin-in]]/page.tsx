@@ -3,11 +3,11 @@ import { SignIn } from '@clerk/nextjs';
 export default function SiginInPage() {
   return (
     <main className="flex flex-row h-screen w-full items-center justify-center overflow-hidden">
-      <div className="flex h-screen w-[50%] items-start justify-start">
+      <div className="flex h-screen w-[50%] items-center justify-start pr-8 bg-blue-500">
         <img
-          src={'/images/auth.jpg'}
+          src={'/images/banner-auth.png'}
           alt={''}
-          className={'h-fit'}
+          className={'w-fit'}
         />
       </div>
       <div className="flex h-screen w-[50%] items-center justify-center">

@@ -2,20 +2,10 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
+import data from "../../../../lib/courseInfo.json";
 
 const categories = ["Усі мови", "Англійська", "Польська", "Французька", "Німецька"]
-const courseList = [
-  {
-    name: "Англійська A1-C1",
-    bannerUrl: "/images/banner-english.jpg",
-    teacher: "Марія Михайлівна"
-  },
-  {
-    name: "Польська A1-C1",
-    bannerUrl: "/images/banner-polish.png",
-    teacher: "Марія Михайлівна"
-  },
-];
 
 const CoursesPage = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -83,9 +73,16 @@ const CoursesPage = () => {
           </div>
         </div>
         <div className="flex flex-wrap p-4 gap-4 rounded-b-xl bg-slate-200 dark:bg-slate-800">
-          {courseList.map((course, i) => {
+          {data.map((course) => {
             return (
-              <button key={i} className="flex flex-col rounded-xl bg-slate-50">
+              <Link 
+                key={course.id}
+                href={{
+                  pathname: `/courses/${course.id}`,
+                  query: { id: course.id },
+                }}
+                className="flex flex-col rounded-xl bg-slate-50"
+              >
                 <Image
                   src={course.bannerUrl}
                   width={356}
@@ -97,7 +94,7 @@ const CoursesPage = () => {
                   <p className="text-sm font-medium text-slate-950">{course.name}</p>
                   <p className="text-xs text-slate-500">{course.teacher}</p>
                 </div>
-              </button>
+              </Link>
             )
           })}
         </div>
