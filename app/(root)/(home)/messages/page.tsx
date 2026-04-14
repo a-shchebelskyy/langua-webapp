@@ -50,8 +50,8 @@ const MessagesPage = () => {
   // const { isLoaded, isSignedIn, userId, sessionId, getToken } = useAuth();
   // const token = getToken();
   // const { user } = useUser();
-  const hasUnread = useState(true);
-  const numUnread = useState(8);
+  // const hasUnread = useState(true);
+  // const numUnread = useState(8);
   // const [activeThread, setActiveThread] = useState(0);
   const [channel, setChannel] = useState<StreamChannel>();
   const client = useCreateChatClient({
@@ -84,13 +84,13 @@ const MessagesPage = () => {
               <p className="text-sm text-neutral-600">
                 Messages
               </p>
-              {hasUnread && (
+              {/* {hasUnread && (
                 <div className="flex items-center justify-center px-2 py-1 rounded-full bg-neutral-200">
                   <p className="text-xs text-neutral-600">
                     • {numUnread} new messages
                   </p>
                 </div>
-              )}
+              )} */}
             </div>
             <div className="flex px-3 py-2 gap-2 items-center justify-start rounded-md border border-neutral-100">
               <Image
