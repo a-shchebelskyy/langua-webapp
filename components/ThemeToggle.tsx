@@ -2,9 +2,6 @@ import { useEffect } from "react";
 import Image from "next/image";
 
 const ThemeToggle = () => {
-    let theme;
-
-    // document.documentElement.classList.contains('dark')
 
     const toggleTheme = () => {
         document.documentElement.classList.toggle('dark');
@@ -14,11 +11,7 @@ const ThemeToggle = () => {
         } else {
         localStorage.setItem('theme', 'dark');
         }
-    };  
-    
-    useEffect(() => {
-        theme = localStorage.getItem('theme');
-      }, []);
+    };
 
     return (
         <button 
