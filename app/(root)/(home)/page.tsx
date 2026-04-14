@@ -1,22 +1,21 @@
 'use client'
 import { useUser } from '@clerk/nextjs'
-import MeetingTypeList from '@/components/MeetingTypeList';
 import Image from 'next/image';
 
 import { days, months } from '@/constants';
 
 const Home = () => {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { user } = useUser();
 
-  const now = new Date();
+  // const now = new Date();
 
-  const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);
+  // const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  // const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);
 
-  const dayName: string = days[new Date().getDay()];
-  const dayNumber = new Date().getDate();
-  const monthName: string = months[new Date().getMonth()];
-  const yearNumber = new Date().getFullYear();
+  // const dayName: string = days[new Date().getDay()];
+  // const dayNumber = new Date().getDate();
+  // const monthName: string = months[new Date().getMonth()];
+  // const yearNumber = new Date().getFullYear();
 
 
   return (
@@ -25,7 +24,7 @@ const Home = () => {
         <div className='flex flex-row'>
           <div className='absolute flex flex-col ml-[112px] mt-[32px] max-w-[256px] gap-2'>
             <h1 className="text-4xl font-semibold">Вітаємо,<span className="text-amber-300"> {user.firstName}</span>!</h1>
-            <p className='text-neutral-300 text-xs'>Натисніть на "Курси", щоб розпочати свою навчальну подорож!</p>
+            <p className='text-neutral-300 text-xs'>Натисніть на &quot;Курси&quot;, щоб розпочати свою навчальну подорож!</p>
           </div>
           <Image
             src="/images/banner-hero.png"

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { DayPilot, DayPilotCalendar, DayPilotMonth, DayPilotNavigator } from "@daypilot/daypilot-lite-react";
+import { DayPilot, DayPilotCalendar, DayPilotMonth } from "@daypilot/daypilot-lite-react";
 
 type ViewType = "Day" | "Week" | "Month";
 
@@ -52,7 +52,7 @@ const teams = [
 
 const Calendar = () => {
     const [view, setView] = useState<ViewType>("Week");
-    const [startDate, setStartDate] = useState<DayPilot.Date>(DayPilot.Date.today());
+    const startDate = useState<DayPilot.Date>(DayPilot.Date.today());
     const [events, setEvents] = useState<DayPilot.EventData[]>([]);
 
     type AnyCalendar = DayPilot.Calendar | DayPilot.Month;
@@ -354,7 +354,7 @@ const Calendar = () => {
                     {/* <button onClick={() => setStartDate(DayPilot.Date.today())} className="rounded-xl ml-3">Today</button> */}
                 </div>
             <div className="flex grow">
-                <DayPilotCalendar
+                { dayView && <DayPilotCalendar
                     viewType={"Day"}
                     startDate={startDate}
                     events={events}
@@ -365,8 +365,8 @@ const Calendar = () => {
                     onTimeRangeSelected={onTimeRangeSelected}
                     onBeforeEventRender={onBeforeEventRenderDayWeek}
                     controlRef={setDayView}
-                />
-                <DayPilotCalendar
+                />}
+                {weekView && <DayPilotCalendar
                     viewType={"Week"}
                     startDate={startDate}
                     events={events}
@@ -377,8 +377,8 @@ const Calendar = () => {
                     onTimeRangeSelected={onTimeRangeSelected}
                     onBeforeEventRender={onBeforeEventRenderDayWeek}
                     controlRef={setWeekView}
-                />
-                <DayPilotMonth
+                />}
+                {monthView && <DayPilotMonth
                     startDate={startDate}
                     events={events}
                     visible={view === "Month"}
@@ -389,7 +389,7 @@ const Calendar = () => {
                     onTimeRangeSelected={onTimeRangeSelected}
                     onBeforeEventRender={onBeforeEventRenderMonth}
                     controlRef={setMonthView}
-                />
+                />}
             </div>
         </div>
     );

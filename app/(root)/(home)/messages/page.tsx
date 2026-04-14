@@ -1,10 +1,10 @@
 "use client";
 import {useEffect, useState } from 'react';
 import Image from 'next/image';
-import { StreamChat } from "stream-chat";
+// import { StreamChat } from "stream-chat";
 import type { User, Channel as StreamChannel } from 'stream-chat';
 import { useCreateChatClient, Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window } from 'stream-chat-react';
-import { useAuth, useUser } from '@clerk/nextjs';
+// import { useAuth, useUser } from '@clerk/nextjs';
 
 import 'stream-chat-react/dist/css/v2/index.css';
 
@@ -52,7 +52,7 @@ const MessagesPage = () => {
   // const { user } = useUser();
   const hasUnread = useState(true);
   const numUnread = useState(8);
-  const [activeThread, setActiveThread] = useState(0);
+  // const [activeThread, setActiveThread] = useState(0);
   const [channel, setChannel] = useState<StreamChannel>();
   const client = useCreateChatClient({
     apiKey,
@@ -102,8 +102,8 @@ const MessagesPage = () => {
               <p className="text-sm text-neutral-400">Search</p>
             </div>
           </div>
-          {messages.map((message) => (
-            <button className="flex w-full px-4 py-6 border-t border-neutral-100 bg-white hover:bg-neutral-100">
+          {messages.map((message, id) => (
+            <button key={id} className="flex w-full px-4 py-6 border-t border-neutral-100 bg-white hover:bg-neutral-100">
             <div className="flex w-full items-center gap-4">
               <div className="flex h-[36px] w-[36px] shrink-0 items-end justify-end rounded-xl bg-neutral-600">
                 {message.online && (

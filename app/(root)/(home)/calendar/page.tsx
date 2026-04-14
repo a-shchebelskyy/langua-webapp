@@ -1,4 +1,3 @@
-import CallList from '@/components/CallList';
 import Calendar from '@/components/Calendar';
 
 const PreviousPage = () => {
