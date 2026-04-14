@@ -55,7 +55,7 @@ const CoursesPage = () => {
           <div className="flex flex-row items-center justify-between">
             <div className="flex flex-row gap-2">
               {categories.map((cat, i) => {
-                const isActive = activeCategory == i;
+                const isActive = activeCategory === i;
                 return (
                   <button 
                     key={i} 
