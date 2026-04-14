@@ -353,7 +353,7 @@ const Calendar = () => {
                     </div>
                     {/* <button onClick={() => setStartDate(DayPilot.Date.today())} className="rounded-xl ml-3">Today</button> */}
                 </div>
-            <div className="flex grow">
+            {/* <div className="flex grow">
                 { dayView && <DayPilotCalendar
                     viewType={"Day"}
                     startDate={startDate}
@@ -389,8 +389,8 @@ const Calendar = () => {
                     onTimeRangeSelected={onTimeRangeSelected}
                     onBeforeEventRender={onBeforeEventRenderMonth}
                     controlRef={setMonthView}
-                />}
-            </div>
+                />} */}
+            {/* </div> */}
         </div>
     );
 };
