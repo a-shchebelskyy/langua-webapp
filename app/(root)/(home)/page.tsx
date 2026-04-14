@@ -2,7 +2,7 @@
 import { useUser } from '@clerk/nextjs'
 import Image from 'next/image';
 
-import { days, months } from '@/constants';
+// import { days, months } from '@/constants';
 
 const Home = () => {
   const { user } = useUser();
