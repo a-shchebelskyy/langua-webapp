@@ -22,10 +22,6 @@ const CoursesPage = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [sortType, setSortType] = useState('popularity');
 
-  const handleSearch = (e) => {
-    setSearchValue(e.target.value);
-  };
-
   return (
     <section className="flex w-full flex-col p-4 text-slate-950 dark:text-white bg-slate-200 dark:bg-slate-950">
       <div className="flex flex-row p-4">
@@ -47,7 +43,7 @@ const CoursesPage = () => {
               <input 
                 type="text" 
                 value={searchValue} 
-                onChange={handleSearch}
+                onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Пошук курсів..."
                 className="flex w-full text-sm text-slate-950 outline-none bg-transparent"
               />
