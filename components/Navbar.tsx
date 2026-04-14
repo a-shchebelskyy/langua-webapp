@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SignedIn, UserButton } from '@clerk/nextjs';
@@ -5,21 +6,21 @@ import { SignedIn, UserButton } from '@clerk/nextjs';
 import MobileNav from './MobileNav';
 
 const Navbar = () => {
+
   return (
-    <nav className="flex-between fixed z-50 w-full bg-dark-1 px-6 py-4 lg:px-10">
-      <Link href="/" className="flex items-center gap-1">
+    <nav className="flex flex-row items-center justify-end gap-3 sticky h-[80px] p-6 border-b border-neutral-700 bg-neutral-800">
+      {/* <p className="text-xl font-semibold text-white max-sm:hidden">
+        Dashboard
+      </p> */}
+      <button className='flex px-4 py-3 rounded-full bg-neutral-900 hover:bg-neutral-700'>
         <Image
-          src="/icons/logo.svg"
-          width={32}
-          height={32}
-          alt="yoom logo"
-          className="max-sm:size-10"
+          src={'/icons/bell.svg'}
+          alt={''}
+          width={16}
+          height={16}
         />
-        <p className="text-[26px] font-extrabold text-white max-sm:hidden">
-          YOOM
-        </p>
-      </Link>
-      <div className="flex-between gap-5">
+      </button>
+      <div>
         <SignedIn>
           <UserButton afterSignOutUrl="/sign-in" />
         </SignedIn>

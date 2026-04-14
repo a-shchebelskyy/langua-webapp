@@ -11,34 +11,35 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "YOOM",
-  description: "Video calling App",
+  title: "Langua",
+  description: "Online Language Learning",
   icons: {
-    icon: "/icons/logo.svg",
+    icon: "/icons/langua-circle.png",
   },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
+
   return (
     <html lang="en">
       <ClerkProvider
         appearance={{
           layout: {
             socialButtonsVariant: "iconButton",
-            logoImageUrl: "/icons/yoom-logo.svg",
+            logoImageUrl: "/icons/langua-circle.png",
           },
           variables: {
-            colorText: "#fff",
-            colorPrimary: "#0E78F9",
-            colorBackground: "#1C1F2E",
-            colorInputBackground: "#252A41",
-            colorInputText: "#fff",
+            colorText: "#000000",
+            colorPrimary: "#3b82f6",
+            colorBackground: "#fafafa",
+            colorInputBackground: "#fafafa",
+            colorInputText: "#000000",
           },
         }}
       >
-        <body className={`${inter.className} bg-dark-2`}>
+        <body className={`${inter.className} bg-neutral-50`}>
           <Toaster />
           {children}
         </body>
