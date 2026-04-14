@@ -12,8 +12,8 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <section className={`sticky left-0 top-0 flex h-screen w-fit flex-col ${isCollapsed ? 'shrink' : 'min-w-[200px]'} ease-in-out duration-700 justify-between border-r-2 border-neutral-700 z-50 bg-neutral-900`}>
-      <div className="flex flex-row h-[80px] justify-center px-4 py-4 border-b-2 border-neutral-700">
+    <section className={`sticky left-0 top-0 flex h-screen w-fit flex-col ${isCollapsed ? 'shrink' : 'min-w-[200px]'} justify-between z-50 bg-slate-100 dark:bg-slate-900`}>
+      <div className="flex flex-row h-[80px] justify-center px-4 py-4 text-slate-950 dark:text-white bg-slate-50 dark:bg-slate-800">
         <button className="flex items-center gap-3" onClick={() => setIsCollapsed(false)}>
           {/* <Image
             src="/icons/langua-circle.png"
@@ -22,8 +22,8 @@ const Sidebar = () => {
             alt="langua logo"
             className="max-sm:size-10"
           /> */}
-          {!isCollapsed && <p className="text-3xl font-semibold text-blue-300 max-sm:hidden">
-            LANG<span className="text-amber-300">UA</span>
+          {!isCollapsed && <p className="text-3xl font-semibold max-sm:hidden">
+            LANG<span className="text-blue-500">UA</span>
           </p>}
         </button>
         {/* {!isCollapsed && <button className='p-2 rounded-lg hover:bg-yellow-400'
@@ -37,7 +37,7 @@ const Sidebar = () => {
           />
         </button>} */}
       </div>
-      <div className="flex flex-1 flex-col p-4 text-white">
+      <div className="flex flex-1 flex-col p-4 text-slate-950 dark:text-white">
         {sidebarLinks.map((item, i) => {
           const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
           
@@ -46,15 +46,14 @@ const Sidebar = () => {
               href={item.route}
               key={item.label}
               className={cn(
-                'flex flex-row gap-3 items-center px-3 py-2 rounded-lg justify-start items-center',
+                'flex flex-row gap-3 items-center px-4 py-3 rounded-lg justify-start items-center',
                 {
-                  'bg-amber-300': isActive,
-                  'text-neutral-800': isActive,
+                  'bg-blue-200 dark:bg-blue-800': isActive,
                 }
               )}
             >
-              <div 
-                className={`flex p-1 rounded-full ${isActive ? 'bg-white' : colors[i]}`}
+              {/* <div 
+                className={`flex p-1 rounded-full bg-slate-50`}
               >
                 <Image
                   src={item.imgURL}
@@ -62,7 +61,7 @@ const Sidebar = () => {
                   width={16}
                   height={16}
                 />
-              </div>
+              </div> */}
               {!isCollapsed && <p className="text-sm font-semibold max-lg:hidden">
                 {item.label}
               </p>}

@@ -21,12 +21,12 @@ const Home = () => {
   if (!isSignedIn) return null;
 
   return (
-    <section className="flex w-full flex-row p-6 text-white bg-neutral-900">
+    <section className="flex w-full flex-row p-6 text-slate-950 dark:text-white bg-slate-200 dark:bg-slate-950">
       <div className="flex flex-1 flex-col min-h-screen">
         <div className='flex flex-row'>
           <div className='absolute flex flex-col ml-[112px] mt-[32px] max-w-[256px] gap-2'>
-            <h1 className="text-4xl font-semibold">Вітаємо,<span className="text-amber-300"> {user?.firstName}</span>!</h1>
-            <p className='text-neutral-300 text-xs'>Натисніть на &quot;Курси&quot;, щоб розпочати свою навчальну подорож!</p>
+            <h1 className="text-4xl font-semibold">Вітаємо,<span className="text-blue-500"> {user?.firstName}</span>!</h1>
+            <p className='text-slate-700 dark:text-slate-300 text-xs'>Натисніть на &quot;Курси&quot;, щоб розпочати свою навчальну подорож!</p>
           </div>
           <Image
             src="/images/banner-hero.png"
@@ -35,14 +35,14 @@ const Home = () => {
             alt={''}
           />
         </div>
-        <div className='flex flex-row items-center justify-between'>
-          <div className="flex flex-col p-6 gap-6">
-            <div className="flex flex-row items-center justify-between">
+        <div className='flex flex-1 flex-row items-center justify-between'>
+          <div className="flex flex-1 flex-col p-6 gap-6">
+            <div className="flex flex-1 flex-row items-center justify-between">
               <h1 className="text-xl font-semibold">Ваші Курси</h1>
-              <a href='/courses' className="text-sm font-medium text-amber-300">Переглянути всі</a>
+              <a href='/courses' className="text-sm font-medium text-blue-500">Переглянути всі</a>
             </div>
-            <div className='flex flex-row grow gap-6'>
-              <div className="flex flex-col rounded-xl bg-neutral-800">
+            <div className='flex flex-row grow items-center justify-center gap-6'>
+              {/* <div className="flex flex-col rounded-xl bg-neutral-800">
                 <Image
                   src="/images/banner-english.jpg"
                   width={405}
@@ -67,16 +67,17 @@ const Home = () => {
                   <p className="text-lg font-semibold text-white">Польська</p>
                   <p className="text-xs font-medium text-amber-300">з Марією Михайлівною</p>
                 </div>
-              </div>
+              </div> */}
+              <p className='mt-10 text-sm text-slate-500'>Тут нічого нема</p>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col w-[256px] p-6 gap-6">
-        <h2 className='text-white text-xl font-semibold'>Майбутні Уроки</h2>
+        <h2 className='text-xl font-semibold'>Майбутні Уроки</h2>
         <div className='flex flex-col gap-3'>
           <div>
-
+            <p className='mt-4 text-sm text-slate-500'>Тут нічого нема</p>
           </div>
 
         </div>

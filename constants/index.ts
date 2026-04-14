@@ -11,18 +11,18 @@ export const sidebarLinks = [
     label: 'Курси',
     color: 'bg-green-300'
   },
-  {
-    imgURL: '/icons/schedule.svg',
-    route: '/calendar',
-    label: 'Календар',
-    color: 'bg-cyan-300'
-  },
-  {
-    imgURL: '/icons/users.svg',
-    route: '/activity',
-    label: 'Активність',
-    color: 'bg-indigo-300'
-  },
+  // {
+  //   imgURL: '/icons/schedule.svg',
+  //   route: '/calendar',
+  //   label: 'Календар',
+  //   color: 'bg-cyan-300'
+  // },
+  // {
+  //   imgURL: '/icons/users.svg',
+  //   route: '/activity',
+  //   label: 'Активність',
+  //   color: 'bg-indigo-300'
+  // },
   {
     imgURL: '/icons/message-square.svg',
     route: '/messages',
@@ -37,11 +37,11 @@ export const sidebarLinks = [
 ];
 
 export const colors = [
-  'bg-amber-300',
-  'bg-green-300',
-  'bg-cyan-300',
-  'bg-indigo-300',
-  'bg-rose-300',
+  'bg-blue-500',
+  'bg-purple-500',
+  'bg-orange-500',
+  'bg-lime-500',
+  'bg-teal-500',
 ];
 
 export const avatarImages = [
