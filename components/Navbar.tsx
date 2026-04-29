@@ -18,12 +18,12 @@ const Navbar = () => {
       </div>
       <div className='flex flex-row gap-3'>
         <ThemeToggle/>
-        <button className='flex h-[40px] w-[40px] items-center justify-center rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-900 dark:hover:bg-slate-700'>
+        <button className='flex h-[44px] w-[44px] items-center justify-center rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-950 dark:hover:bg-slate-900'>
           <Image
-            src={'/icons/bell.svg'}
+            src={'/images/bell.png'}
             alt={''}
-            width={16}
-            height={16}
+            width={28}
+            height={28}
           />
         </button>
         <div className='flex items-center justify-center'>

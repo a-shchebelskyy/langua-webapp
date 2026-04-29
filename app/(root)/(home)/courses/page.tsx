@@ -19,10 +19,10 @@ const CoursesPage = () => {
           <h1 className="text-4xl font-semibold">Відкрийте нові курси</h1>
         </div>
       </div>
-      <div className="flex flex-col rounded-xl bg-slate-50 dark:bg-slate-900">
+      <div className="flex flex-col bg-slate-50 dark:bg-slate-900 border border-slate-950 border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
         <div className="flex flex-col p-4 gap-4">
-          <div className="flex flex-row">
-            <div className="flex flex-1 flex-row items-center justify-start rounded-l-xl bg-slate-100">
+          <div className="flex flex-row gap-4">
+            <div className="flex flex-1 flex-row items-center justify-start bg-slate-100 border-slate-950 border">
               <Image
                 src={'/icons/search.svg'}
                 alt={''}
@@ -38,8 +38,8 @@ const CoursesPage = () => {
                 className="flex w-full text-sm text-slate-950 outline-none bg-transparent"
               />
             </div>
-            <button className="flex flex-row items-center justify-center px-6 py-4 gap-2 rounded-r-xl bg-blue-500 hover:bg-blue-700">
-              <p className="text-sm font-medium text-slate-50">Пошук</p>
+            <button className="flex flex-row items-center justify-center px-3 py-1 text-slate-950 hover:text-slate-50 bg-blue-500 hover:bg-slate-950 border-slate-950 border">
+              <p className="text-sm font-bold">ПОШУК</p>
             </button>
           </div>
           <div className="flex flex-row items-center justify-between">
@@ -57,7 +57,7 @@ const CoursesPage = () => {
                 )
               })}
             </div>
-            <div className="flex flex-row items-center justify-end gap-1">
+            <div className="flex flex-row items-center justify-end px-3 py-1 gap-1 border-slate-950 border">
               <p className="text-xs text-slate-500">Сортувати:</p>
               <select 
                 value={sortType} 
@@ -81,14 +81,14 @@ const CoursesPage = () => {
                   pathname: `/courses/${course.id}`,
                   query: { id: course.id },
                 }}
-                className="flex flex-col rounded-xl bg-slate-50"
+                className="flex flex-col bg-slate-50 border border-slate-950 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               >
                 <Image
                   src={course.bannerUrl}
                   width={356}
                   height={132}
                   alt={''}
-                  className={'rounded-t-xl'}
+                  className={''}
                 />
                 <div className='flex flex-col px-4 py-6 gap-4 items-start'>
                   <p className="text-sm font-medium text-slate-950">{course.name}</p>
